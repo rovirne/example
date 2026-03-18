@@ -6,12 +6,10 @@ func main() {
 	defer func() {
 		if r := recover(); r != nil {
 			fmt.Println("send to closed wdwdaw  ", r)
-
 			fmt.Println("send to closed channel  ", r)
 		}
 	}()
 	res := make(chan int, 2)
-
 	res <- 1
 	res <- 2
 	close(res)
